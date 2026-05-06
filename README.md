@@ -1,4 +1,4 @@
-epositório de estudos em SQL utilizando o banco Sakila.
+Repositório de estudos em SQL utilizando o banco Sakila.
 
 Conteúdos:
 - SELECT e filtros
