@@ -29,7 +29,7 @@
 #where rating in ('PG','G') and length < 100
 
 # LIKE 
-# Liste os clientes cujo primeiro nome começa com 'M' e termina com 'A'. 
+#5) Liste os clientes cujo primeiro nome começa com 'M' e termina com 'A'. 
 select first_name from customer
-where first_name like ("%M") and ("A%")
+where first_name like "M%A"
        
