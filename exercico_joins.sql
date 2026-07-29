@@ -38,16 +38,36 @@ use sakila;
 #Exercício 4 — JOIN + WHERE (3 tabelas)
 #Liste o título do filme, o nome da categoria e o idioma, 
 #apenas dos filmes de ação (category.name = 'Action'). Use film, film_category, category, language.
-select
-     film.title as titulo,
-     category.name as nome_categoria,
-     language.name as linguagem
-from film
-join film_category
-                 on film.film_id = film_category.film_id
-join category
-             on film_category.category_id = category.category_id
-join language
-            on film.language_id = language.language_id
-where category.name  = 'Action'
+#select
+ #    film.title as titulo,
+  #   category.name as nome_categoria,
+   #  language.name as linguagem
+#from film
+#join film_category
+ #                on film.film_id = film_category.film_id
+#join category
+ #            on film_category.category_id = category.category_id
+#join language
+ #           on film.language_id = language.language_id
+#where category.name  = 'Action'
     
+
+
+#Exercício 5 — JOIN + COUNT + GROUP BY (3 tabelas)
+#Liste o nome do ator e a quantidade de filmes que ele participou. Use actor, film_actor. Ordene
+#do maior para o menor. Limite a 5.
+select
+    actor.first_name as nome,
+    actor.last_name as sobrenome,
+    count(film_actor.film_id) as quantidade_film
+from actor
+join 
+    film_actor
+              on actor.actor_id = film_actor.actor_id
+group by nome,sobrenome
+order by  quantidade_film desc
+limit 5
+    
+    
+    
+      
